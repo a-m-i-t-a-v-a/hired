@@ -7,6 +7,8 @@ import JobListing from './pages/JobListing'
 import Job from './pages/Job'
 import PostJob from './pages/PostJob'
 import SavedJobs from './pages/SavedJobs'
+import { ThemeProvider } from './components/ThemeProvider'
+import ThemeButton from './components/theme-button/ThemeButton'
 
 function App() {
 
@@ -43,7 +45,10 @@ function App() {
   ])
 
   return (
-    <RouterProvider router={router}/>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeButton/>
+      <RouterProvider router={router}/>
+    </ThemeProvider>
   )
 }
 
